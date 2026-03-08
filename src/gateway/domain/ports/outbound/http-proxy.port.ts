@@ -1,4 +1,6 @@
-export const HTTP_PROXY_PORT = Symbol('HTTP_PROXY_PORT');export interface ProxyRequest {
+export const HTTP_PROXY_PORT = Symbol('HTTP_PROXY_PORT');
+
+export interface ProxyRequest {
   method: string;
   path: string;
   body?: unknown;

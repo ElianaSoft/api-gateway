@@ -1,5 +1,3 @@
-// src/gateway/domain/exceptions/gateway.exceptions.ts
-
 export class GatewayException extends Error {
   constructor(
     message: string,
