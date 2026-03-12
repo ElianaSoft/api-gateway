@@ -22,6 +22,7 @@ export class HttpProxyAdapter implements IHttpProxyPort {
 
   private initializeClients(): void {
     const services = this.configService.get<Record<string, string>>('config.services');
+    const apiKey = this.configService.get<string>('config.internalApiKey');
 
     if (services) {
       Object.entries(services).forEach(([name, url]) => {
@@ -32,6 +33,7 @@ export class HttpProxyAdapter implements IHttpProxyPort {
             timeout: 30000,
             headers: {
               'Content-Type': 'application/json',
+              'x-api-key': apiKey || '',
             },
           }),
         );

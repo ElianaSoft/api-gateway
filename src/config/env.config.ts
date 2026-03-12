@@ -15,6 +15,8 @@ export default registerAs('config', () => ({
     production: process.env.PRODUCTION_SERVICE_URL || 'http://localhost:3003',
   },
 
+  internalApiKey: process.env.INTERNAL_API_KEY || 'default-internal-key',
+
   rateLimit: {
     ttl: parseInt(process.env.RATE_LIMIT_TTL || '60000', 10),
     limit: parseInt(process.env.RATE_LIMIT_MAX || '100', 10),
