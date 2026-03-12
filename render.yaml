@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: api-gateway
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: JWT_SECRET
+        sync: false
+      - key: USERS_SERVICE_URL
+        sync: false
+      - key: ORDERS_SERVICE_URL
+        sync: false
+      - key: PRODUCTION_SERVICE_URL
+        sync: false
